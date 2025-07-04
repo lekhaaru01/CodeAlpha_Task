@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Modern Image Gallery</title>
+  <title>Music Player</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-
-  <div class="container">
-    <h1 class="title">Image Gallery</h1>
-
-    <!-- Filter buttons -->
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="nature">Nature</button>
-      <button class="filter-btn" data-filter="architecture">Architecture</button>
-      <button class="filter-btn" data-filter="animals">Animals</button>
+  <div class="player">
+    <h2 id="title">Title</h2>
+    <h3 id="artist">Artist</h3>
+    
+    <audio id="audio"></audio>
+    
+    <div class="controls">
+      <button id="prev">⏮️</button>
+      <button id="play">▶️</button>
+      <button id="next">⏭️</button>
+    </div>
+    
+    <div class="progress-container">
+      <span id="current-time">0:00</span>
+      <input type="range" id="progress" value="0" max="100"/>
+      <span id="duration">0:00</span>
+    </div>
+    
+    <div class="volume-container">
+      Volume: <input type="range" id="volume" min="0" max="1" step="0.01" value="1"/>
     </div>
 
-    <!-- Gallery Grid -->
-    <div class="gallery"></div>
-
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" class="lightbox-img">
-    <div class="lightbox-nav">
-      <span class="nav-btn" id="prev">&#10094;</span>
-      <span class="nav-btn" id="next">&#10095;</span>
-    </div>
+    <ul id="playlist"></ul>
   </div>
 
   <script src="script.js"></script>
